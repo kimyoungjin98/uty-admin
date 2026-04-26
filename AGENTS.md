@@ -5,40 +5,37 @@
 Reusable `Next.js` landing-page boilerplate for client work.
 
 Current scope:
-- One App Router web app rooted at `app/`
-- Shared UI primitives in `components/ui`
-- Landing-specific sections in `components/landing`
-- Config and typed content in `config/` and `content/`
-- No API routes, database, worker, or monorepo packages yet
+- Turborepo workspace rooted at the repository root
+- `apps/web`: Next.js App Router frontend
+- `apps/api`: NestJS backend
+- Shared workspace-level config for TypeScript and Turbo
+- No database, worker, or shared package under `packages/` yet
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) and `docs/*.md` for detail.
 
 ## Run Commands
 
-- Install: `bun install` (preferred) or `npm install`
-- Dev: `bun run dev`
-- Build: `bun run build`
-- Lint: `bun run lint`
-- Start production build locally: `bun run start`
+- Install: `pnpm install`
+- Dev: `pnpm dev`
+- Web only: `pnpm dev:web`
+- API only: `pnpm dev:api`
+- Build: `pnpm build`
+- Lint: `pnpm lint`
+- Typecheck: `pnpm typecheck`
 - Test: no `test` script exists yet
 
 ## Testing Expectations
 
-- Before finishing code changes, run `bun run lint` and `bun run build` at minimum.
-- There is no automated `test` or `typecheck` script yet; do not claim those checks ran unless you added them.
-- Manual verification is acceptable for docs, content, and UI-only changes; smoke-test changed flows in `bun run dev`.
+- Before finishing code changes, run `pnpm lint` and `pnpm build` at minimum.
+- There is no automated `test` script yet; do not claim tests ran unless you added them.
+- Manual verification is acceptable for docs, content, and UI-only changes; smoke-test changed flows in `pnpm dev`.
 - Always report exactly what you validated and what you could not validate.
 
 ## Key Module Locations
 
-- `app`: routes, metadata, and global CSS
-- `components/landing`: page sections and landing-specific presentation
-- `components/ui`: reusable design-system primitives
-- `config`: site and theme defaults
-- `content`: typed page content and section schema
-- `hooks`, `lib`: shared hooks and utilities
-- `server`: future server-only integrations
-- `types`: shared cross-layer types with no clear local owner
+- `apps/web`: routes, metadata, frontend components, content, and styling
+- `apps/api`: NestJS controllers, modules, and services
+- `packages`: future shared packages
 - `docs`: plans, specs, references, and deeper guidance
 
 ## Commit / PR Guidelines

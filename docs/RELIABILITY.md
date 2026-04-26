@@ -4,8 +4,8 @@
 
 Reliability checks are lightweight today:
 
-- static analysis through `bun run lint`
-- production compilation through `bun run build`
+- static analysis through `pnpm lint`
+- production compilation through `pnpm build`
 - manual smoke testing in local dev
 
 There is no formal monitoring, tracing, or automated regression suite yet.

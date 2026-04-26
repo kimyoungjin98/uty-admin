@@ -1,0 +1,10 @@
+.next
+.turbo
+apps/*/.next
+apps/*/dist
+node_modules
+dist
+coverage
+.DS_Store
+*.log
+*.tsbuildinfo
