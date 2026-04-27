@@ -89,6 +89,73 @@ flowchart TB
     S7 --> DB
 ```
 
+## Requirement-Based UI Flow
+
+```mermaid
+flowchart LR
+    subgraph CustomerOrder["사용자 발주"]
+        O0["/orders
+발주 목록"]
+        O1["/orders/new
+고객 계정 선택"]
+        O2["업체 등록/선택"]
+        O3["신청서 작성
+링크 / 자동정보 / 유형 / 키워드"]
+        O4["상품 / 옵션 / 수량 / 진행일
+금액 자동계산"]
+        O5["이미지 ZIP 업로드
+결제 방식 선택"]
+        O6["신청 접수"]
+        OB["/orders/bulk
+엑셀 다수 등록"]
+        OR["/orders/recent
+최근 이력 재발주"]
+    end
+
+    subgraph CustomerStatus["사용자 진행 현황"]
+        S0["/status
+상태 필터"]
+        S1["신청 승인 대기
+수정 가능"]
+        S2["진행중
+블로그 리스트 / 진행률"]
+        S3["완료
+간편 리포트 / 전체 결과보고서"]
+        S4["중지 요청"]
+    end
+
+    subgraph AdminCompany["관리자 업체 상세"]
+        A0["/admin/companies
+업체 목록"]
+        A1["/admin/companies/[companyId]
+업체 상세"]
+        A2["orders
+발주 승인 / 결제 확인 / 중지 처리"]
+        A3["progress
+진행 작업 / 블로그 리스트 / 리포트 관리"]
+        A4["/admin/logs
+상세 로그"]
+    end
+
+    O0 --> O1 --> O2 --> O3 --> O4 --> O5 --> O6
+    O0 --> OB --> O6
+    O0 --> OR --> O1
+    O6 --> S0
+    S0 --> S1
+    S0 --> S2
+    S0 --> S3
+    S2 --> S4
+    S1 --> A2
+    S2 --> A3
+    S3 --> A3
+    S4 --> A2
+    A0 --> A1
+    A1 --> A2
+    A1 --> A3
+    A2 --> A4
+    A3 --> A4
+```
+
 ## System Overview
 
 ```mermaid

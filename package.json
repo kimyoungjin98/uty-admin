@@ -7,6 +7,7 @@
     "dev:web": "turbo run dev --filter=web",
     "dev:api": "turbo run dev --filter=api",
     "build": "turbo run build",
+    "build:web": "turbo run build --filter=web",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
   },
@@ -15,6 +16,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
+    "next": "^15.5.15",
     "turbo": "^2.5.8"
   },
   "dependencies": {

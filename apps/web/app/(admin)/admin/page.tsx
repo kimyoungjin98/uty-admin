@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function LegacyNewUserPage() {
+export default function AdminRootPage() {
   redirect("/admin/companies");
 }

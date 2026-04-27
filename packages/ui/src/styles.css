@@ -1,0 +1,87 @@
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #171a20;
+  --color-card: #ffffff;
+  --color-card-foreground: #171a20;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #171a20;
+  --color-primary: #3e6ae1;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f4f4f4;
+  --color-secondary-foreground: #171a20;
+  --color-muted: #f4f4f4;
+  --color-muted-foreground: #5c5e62;
+  --color-accent: #f4f7ff;
+  --color-accent-foreground: #171a20;
+  --color-destructive: #b3261e;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #eeeeee;
+  --color-input: #d0d1d2;
+  --color-ring: #3e6ae1;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f4f4;
+  --color-surface-strong: #eeeeee;
+  --color-text: #171a20;
+  --color-text-secondary: #393c41;
+  --color-text-muted: #5c5e62;
+  --color-brand-50: #f4f7ff;
+  --color-brand-100: #e7edff;
+  --color-brand-500: #3e6ae1;
+  --color-brand-600: #3457bf;
+  --color-brand-900: #1f2f66;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --animate-ui-enter: ui-enter 0.33s cubic-bezier(0.5, 0, 0, 0.75);
+
+  @keyframes ui-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --uty-motion: 0.33s cubic-bezier(0.5, 0, 0, 0.75);
+    --form-field-gap: 10px;
+    --form-label-margin: 0px;
+    --form-description-margin: 2px;
+    --form-control-height: 40px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background: #ffffff;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background: #e7edff;
+    color: #1f2f66;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
